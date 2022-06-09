@@ -461,3 +461,161 @@
 		}
 	}
 }
+
+
+// 2022.06.09 add matsubara
+// データで見る レイアウト修正
+.lower-data {
+	.data {
+		.sections {
+			&__item {
+				&.-circle2 {
+					.contents {
+						&__visual {
+							@media only screen and (min-width: 767px){
+								width: 150px;
+								height: 150px;
+								margin-right: 7%;
+							}
+
+							&:before {
+								@media only screen and (min-width: 767px){
+									width: 85px;
+									height: 85px;
+									right: -6%;
+								}
+							}
+						}
+					}
+					.sections__item__wrap {
+						@media only screen and (min-width: 767px){
+							padding: 28px 38px 60px;
+						}
+					}
+				}
+				&.-counticon1 {
+					.contents {
+						&__visual {
+							.txt {
+								.num {
+									font-size: 7.6rem;
+									@media only screen and (max-width: 768px){
+										font-size: 5.6rem;
+									}
+								}
+							}
+						}
+					}
+				}
+				&.-counticon3 {
+					.contents {
+						&__visual {
+							align-items: flex-end;
+
+
+							.icon {
+								margin-left: 24px;
+								@media only screen and (max-width: 768px){
+									margin-left: 16px;
+								}
+
+								.img-box {
+									@media only screen and (max-width: 768px){
+										transform-origin: bottom left;
+									}
+								}
+							}
+							.txt {
+								font-size: 3rem;
+								margin-top: 8px;
+								@media only screen and (max-width: 768px){
+									font-size: 2.6rem;
+								}
+
+								&:first-child {
+									margin-top: 0;
+								}
+
+								.num {
+									font-size: 6rem;
+									@media only screen and (max-width: 768px){
+										font-size: 4.8rem;
+									}
+								}
+							}
+						}
+					}
+				}
+				&.-counticon4 {
+					.contents {
+						&__visual {
+							align-items: flex-end;
+
+							.txt {
+								font-size: 3rem;
+								display: flex;
+								justify-content: flex-start;
+								align-items: flex-end;
+								margin-top: 8px;
+								@media only screen and (max-width: 768px){
+									font-size: 2.6rem;
+									flex-wrap: wrap;
+									margin-top: 16px;
+								}
+
+								&:first-child {
+									margin-top: 0;
+								}
+
+								.num {
+									font-size: 6rem;
+									@media only screen and (max-width: 768px){
+										font-size: 4.8rem;
+									}
+								}
+							}
+							.icon {
+								margin-left: 16px;
+
+								.img-box {
+									@media only screen and (max-width: 768px){
+										transform-origin: left bottom;
+									}
+								}
+							}
+						}
+					}
+				}
+				.contents {
+					&__annotation02 {
+						@media only screen and (max-width: 768px){
+							width: 90%;
+							margin-top: 24px;
+						}
+					}
+				}
+				.budge02 {
+					font-size: 1.4rem;
+					color: #fff;
+					font-weight: bold;
+					background-color: #a1695c;
+					border-radius: 10px;
+					width: 80px;
+					height: 30px;
+					display: inline-flex;
+					justify-content: center;
+					align-items: center;
+					padding-bottom: 2px;
+					@media only screen and (max-width: 768px){
+						font-size: 1.3rem;
+						width: 76px;
+						height: 24px;
+						margin-right: calc(100% - 76px );
+						flex-shrink: 0;
+						margin-bottom: 2px;
+					}
+				}
+			}
+		}
+	}
+}
