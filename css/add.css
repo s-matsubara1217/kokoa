@@ -558,3 +558,27 @@
     margin-bottom: 2px;
   }
 }
+.lower-faq .tab__item {
+  margin-right: 16px;
+}
+@media only screen and (max-width: 768px) {
+  .lower-faq .tab__item {
+    margin-right: 8px;
+  }
+}
+.lower-faq .tab__item:last-child {
+  margin-right: 0;
+}
+.lower-faq .faq__list__item .question {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.lower-faq .faq__list__item .question:before {
+  margin-top: 3px;
+}
+@media only screen and (max-width: 768px) {
+  .lower-faq .faq__list__item .question:before {
+    margin-right: 8px;
+  }
+}

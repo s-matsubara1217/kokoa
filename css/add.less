@@ -619,3 +619,34 @@
 		}
 	}
 }
+
+
+// 2022.06.09 add matsubara
+// よくある質問 修正対応
+.lower-faq {
+	.tab__item {
+		margin-right: 16px;
+		@media only screen and (max-width: 768px){
+			margin-right: 8px;
+		}
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+	.faq__list__item {
+		.question {
+				display: flex;
+				justify-content: flex-start;
+				align-items: flex-start;
+
+
+				&:before {
+					margin-top: 3px;
+					@media only screen and (max-width: 768px){
+						margin-right: 8px;
+					}
+				}
+
+		}
+	}
+}
