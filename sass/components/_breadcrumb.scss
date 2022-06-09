@@ -1,0 +1,65 @@
+@use '../foundation/variables';
+@use '../foundation/mixins';
+
+// BREADCRUMB
+.breadcrumb {
+  position: relative;
+  z-index: 1;
+  clear: both;
+  width: 100%;
+  &:before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: variables.$bg-color01;
+  }
+  &_inner {
+    width: 100%;
+  }
+  &_list {
+    position: relative;
+    z-index: 1;
+    padding: 12px 20px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    border: 2px dotted rgba(variables.$primary-color, 0.35);
+    background: #fff;
+    border-radius: 5px;
+    @include mixins.mq-down(sm) {
+      padding: 8px 15px;
+    }
+    &_item {
+      display: inline;
+      font-size: 1.2rem;
+      margin: 0 2px;
+      a {
+        transition: opacity 300ms variables.$bezier-easeOutCubic;
+        @include mixins.mq-up(md) {
+          &:hover {
+            opacity: 0.7;
+          }
+        }
+      }
+      &:not(:last-child):after {
+        content: '>';
+        margin-left: 7px;
+      }
+    }
+  }
+}
+
+.lower-kyujin_d {
+  .breadcrumb {
+    @include mixins.mq-down(sm) {
+      margin-top: 30px;
+    }
+  }
+}

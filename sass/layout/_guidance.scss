@@ -1,0 +1,711 @@
+// Foundation
+@use '../foundation/variables';
+@use '../foundation/mixins';
+
+
+// $useCode: false;
+// @if $useCode {}
+// background-color: rgba(0,0,0,0.1);
+
+/* ============================================
+// 法人・施設様へのご案内
+// ==========================================*/
+.lower-guidance {
+
+  .guidance {
+    position: relative;
+    padding-bottom: 50px;
+    @include mixins.mq-up(md) {
+      padding-top: 40px;
+    }
+    @include mixins.mq-down(md) {
+      padding-bottom: 30px;
+    }
+
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 23%;
+      height: 360px;
+      background-image: url(../img/common/bg_dotted_brown.png);
+      background-repeat: repeat;
+      position: absolute;
+      z-index: 5;
+      top: -40px;
+      left: 0;
+      pointer-events: none;
+      @include mixins.mq-down(md) {
+        background-size: 30px;
+        width: 45%;
+      }
+    }
+
+    &__head {
+      position: relative;
+      z-index: 5;
+      padding-bottom: 80px;
+      @include mixins.mq-down(md) {
+        padding-bottom: 50px;
+      }
+      .innerWrap {
+        @include mixins.mq-up(md) {
+          display: flex;
+          justify-content: flex-start;
+        }
+      }
+      .img-holder {
+        @include mixins.mq-up(md) {
+          flex: 0 0 48.4%;
+          margin-right: 5%;
+        }
+        @include mixins.mq-down(md) {
+          margin-top: 24px;
+        }
+        .img {
+            @include mixins.keepAspect(calc((410/580) *100%));
+            @include mixins.mq-up(md) {
+              max-width: 580px;
+            }
+            @include mixins.mq-down(md) {
+              margin-bottom: 20px;
+            }
+          img {
+            border-radius: 5px;
+          }
+        }
+      }
+      .txt-holder {
+        flex: 1 1 auto;
+        display: flex;
+        align-items: center;
+        &_inner {}
+        .lead {
+          font-size: 2.4rem;
+          color: #f67f67;
+          line-height: 1.7;
+          @include mixins.mq-down(md) {
+            font-size: 2rem;
+          }
+        }
+        .desc {
+          margin-top: 20px;
+        }
+      }
+    }
+
+    &__body {
+    }
+
+  }
+
+
+  .sec__terms {
+    background-color: #fef6f4;
+    padding-top: 70px;
+    padding-bottom: 70px;
+    @include mixins.mq-down(md) {
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
+
+    .terms {
+      .sec-ttl03 .sub .en {
+          span {
+            &:nth-child(9) {
+              background-color: #333;
+              width: 0.5em;
+            }
+          }
+      }
+      .body {
+        margin-top: 40px;
+        @include mixins.mq-down(md) {
+          margin-top: 25px;
+        }
+      }
+      .lead {
+        @include mixins.mq-up(md) {
+          text-align: center;
+        }
+      }
+      .notes {
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+        @include mixins.mq-down(md) {
+          margin-top: 15px;
+        }
+      }
+      .role {
+        position: relative;
+        background-color: #fff;
+        border-radius: 15px;
+        margin-top: 30px;
+        padding: 50px;
+        @include mixins.mq-down(md) {
+          margin-top: 15px;
+          padding: 40px 10%;
+        }
+        &::before {
+          content: "";
+          display: block;
+          position: absolute;
+          z-index: 0;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50% , -50%);
+          width: calc(100% - 30px);
+          height: calc(100% - 30px);
+          border-radius: 10px;
+          border: 1px dashed #dfc6c0;
+          pointer-events: none;
+          @include mixins.mq-down(md) {
+            width: calc(100% - 20px);
+            height: calc(100% - 20px);
+          }
+        }
+        &__notes {
+          font-size: 1.2rem;
+          max-width: 1050px;
+          margin-left: auto;
+          margin-right: auto;
+          text-align: right;
+          @include mixins.mq-down(md) {
+            margin-top: 10px;
+          }
+        }
+      }
+      .roleList {
+        max-width: 1050px;
+        margin-left: auto;
+        margin-right: auto;
+        &__item {
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          &:not(:first-child) {
+            margin-top: 30px;
+            @include mixins.mq-down(md) {
+              margin-top: 20px;
+            }
+          }
+        }
+        .budge {
+          margin-right: 20px;
+          background-color: #4d3c37;
+          border-radius: 100px;
+          padding: 0 20px;
+          .jobs {
+            color: #fff;
+            font-size: 1.2rem;
+            font-weight: bold;
+          }
+        }
+        .people {
+          font-weight: bold;
+        }
+        .desc {
+          width: 100%;
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+
+
+  .sec__case {
+    position: relative;
+    padding-top: 70px;
+    padding-bottom: 70px;
+    @include mixins.mq-down(md) {
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 30%;
+      height: 360px;
+      background-image: url(../img/common/bg_dotted_brown.png);
+      background-repeat: repeat;
+      position: absolute;
+      z-index: 5;
+      top: 0;
+      right: 0;
+      pointer-events: none;
+    }
+    .case {
+      position: relative;
+      z-index: 5;
+      &__inner {
+        max-width: 1100px + 80px;
+      }
+    }
+    .head {}
+    .body {
+      margin-top: 60px;
+      @include mixins.mq-down(md) {
+        margin-top: 30px;
+      }
+    }
+    .caseList {
+      @include mixins.mq-up(md) {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+      }
+      &__item {
+        position: relative;
+        @include mixins.mq-up(md) {
+          flex: 0 1 550px;
+          max-width: 550px;
+          padding-left: 50px;
+          padding-right: 50px;
+        }
+        &:not(:last-child) {
+          &::before {
+            @include mixins.mq-up(md) {
+              content: "";
+            }
+            display: block;
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 2px;
+            height: 100%;
+            border-left: 2px dotted #dfc6c0;
+          }
+          @include mixins.mq-down(md) {
+            margin-bottom: 30px;
+          }
+        }
+      }
+      .img-holder {
+        position: relative;
+        .img {
+          z-index: 3;
+            @include mixins.keepAspect(calc((304/450) *100%));
+            max-width: 450px;
+          img {
+            border-radius: 5px;
+          }
+        }
+        .num {
+          position: absolute;
+          z-index: 5;
+          top: 0;
+          left: 0;
+          margin-top: -25px;
+          margin-left: -25px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          background-color: #4d3c37;
+          width: 75px;
+          height: 75px;
+          border-radius: 50%;
+          color: #fff;
+          line-height: 1;
+          font-family: variables.$font-Karla;
+          @include mixins.mq-down(md) {
+            width: 50px;
+            height: 50px;
+            margin-top: -10px;
+            margin-left: -10px;
+          }
+          &_word {
+            font-size: 1.2rem;
+            margin-bottom: 3px;
+            @include mixins.mq-down(md) {
+              font-size: 1rem;
+              margin-bottom: 0;
+            }
+          }
+          &_num {
+            font-size: 2.6rem;
+            @include mixins.mq-down(md) {
+              font-size: 2rem;
+            }
+          }
+        }
+      }
+      .txt-holder {
+        margin-top: 30px;
+        @include mixins.mq-down(md) {
+          margin-top: 15px;
+        }
+        .desc {
+          margin-top: 20px;
+        }
+      }
+    }
+
+    .case_block {
+      position: relative;
+      margin-top: 70px;
+      @include mixins.mq-down(md) {
+        text-align: center;
+        margin-top: 30px;
+      }
+      .hd {
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: #fff;
+        border-radius: 200px;
+        background-color: variables.$secondary-color;
+        text-align: center;
+        padding: 0.5em 2em;
+        @include mixins.mq-up(md) {
+          position: absolute;
+          bottom: 100%;
+          left: 30px;
+          margin-bottom: -28px;
+        }
+        @include mixins.mq-down(md) {
+          display: inline-block;
+          font-size: 1.6rem;
+          line-height: 1.5;
+        }
+      }
+      .txt-holder {
+        background-color: #fef6f4;
+        border-radius: 15px;
+        padding: 50px;
+        @include mixins.mq-down(md) {
+          text-align: left;
+          padding: 30px 7%;
+          margin-top: -20px;
+        }
+      }
+    }
+
+  }
+
+
+  .sec__charm {
+    position: relative;
+    padding-top: 70px;
+    padding-bottom: 70px;
+    @include mixins.mq-down(md) {
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 30%;
+      height: 100%;
+      background-image: url(../img/common/bg_dotted_brown.png);
+      background-repeat: repeat;
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+    }
+    &::after {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      z-index: 0;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 400px;
+      background-color: #fef6f4;
+      @include mixins.mq-down(md) {
+        height: 100%;
+      }
+    }
+    .charm {
+    }
+    .head {
+      position: relative;
+      z-index: 5;
+    }
+    .body {
+      position: relative;
+      z-index: 5;
+      margin-top: 40px;
+      @include mixins.mq-down(md) {
+        margin-top: 30px;
+      }
+    }
+    .charmList {
+      @include mixins.mq-up(md) {
+        display: flex;
+        justify-content: center;
+      }
+      &__item {
+        @include mixins.mq-up(md) {
+          flex: 0 1 360px;
+          max-width: 360px;
+          margin-left: 30px;
+          margin-right: 30px;
+        }
+        @include mixins.mq-down(md) {
+          &:not(:first-child) {
+            margin-top: 35px;
+          }
+        }
+      }
+      .img-holder {
+        position: relative;
+        margin-bottom: 30px;
+        @include mixins.mq-down(md) {
+          margin-bottom: 20px;
+        }
+        .img {
+            z-index: 3;
+            @include mixins.keepAspect(calc((256/256) *100%));
+            max-width: 256px;
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            @include mixins.mq-down(md) {
+              width: 70%;
+              max-width: 250px;
+              margin: 0 auto;
+            }
+            &::after {
+              content: "";
+              display: block;
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%,-50%);
+              border-radius: 50%;
+              border: 2px solid variables.$secondary-color;
+              width: 100%;
+              height: 100%;
+              pointer-events: none;
+            }
+          img {
+            border-radius: 50%;
+          }
+        }
+        .num {
+          position: absolute;
+          z-index: 5;
+          bottom: 0;
+          left: 50%;
+          margin: 0 0 -10px 30px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          line-height: 1;
+          font-size: 6rem;
+          font-family: variables.$font-Karla;
+          color: variables.$secondary-color;
+          @include mixins.mq-down(md) {
+            font-size: 4rem;
+          }
+        }
+      }
+      .txt-holder {
+        .copy {
+          font-size: 1.8rem;
+          font-weight: bold;
+          color: variables.$secondary-color;
+        }
+        .lead {
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+
+
+  .sec__message {
+    position: relative;
+    padding-top: 70px;
+    padding-bottom: 70px;
+    @include mixins.mq-down(md) {
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
+    .message {
+      &__inner {
+        @include mixins.mq-up(md) {
+          display: flex;
+        }
+      }
+      .img-holder {
+        position: relative;
+        @include mixins.mq-up(md) {
+          flex: 0 0 46.7%;
+          margin-right: 5%;
+        }
+        @include mixins.mq-down(md) {
+          margin-bottom: 30px
+        }
+        .img {
+            @include mixins.keepAspect(calc((374/560) *100%));
+            max-width: 560px;
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            @include mixins.mq-down(md) {
+              margin: 0 auto;
+            }
+          img {
+            border-radius: 5px;
+          }
+        }
+      }
+      .txt-holder {
+        @include mixins.mq-up(md) {
+          display: flex;
+          align-items: center;
+          flex: 1 1 auto;
+        }
+        &_inner {
+        }
+        .sec-ttl03 {
+          margin-bottom: 20px;
+        }
+        .lead {
+          font-size: 2rem;
+          font-weight: bold;
+          color: variables.$secondary-color;
+        }
+        .desc {
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+
+
+
+  .footer__content-bottom .copy {
+    padding-bottom: 120px;
+    @include mixins.mq-down(md) {
+      padding-bottom: 80px;
+    }
+  }
+}
+
+
+.convertionSet {
+  position: fixed;
+  z-index: 10;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: url(../img/guidance/bg-convertion.png) repeat 0 0;
+  padding: 20px;
+  @include mixins.mq-down(md) {
+    padding: 10px;
+  }
+  &_inner {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+  }
+
+  .phone {
+    flex: 0 1 50%;
+    a {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      color: #fff;
+      line-height: 1;
+      height: 100%;
+      padding-left: 65px;
+      white-space: nowrap;
+      @include mixins.mq-down(md) {
+        padding-left: 26px;
+        justify-content: center;
+      }
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        width: 50px;
+        height: 50px;
+        background: url(../img/guidance/ico-tel.png) no-repeat center center / contain;
+        @include mixins.mq-down(md) {
+          transform: none;
+          top: 5px;
+          width: 20px;
+          height: 20px;
+        }
+      }
+    }
+    &_num {
+      position: relative;
+      font-size: 3.6rem;
+      font-weight: bold;
+      @include mixins.mq-down(md) {
+        font-size: 1.8rem;
+      }
+    }
+    &_notes {
+      font-size: 1.4rem;
+      font-weight: bold;
+      margin-top: 10px;
+      @include mixins.mq-down(md) {
+        font-size: 1rem;
+        margin-top: 5px;
+      }
+    }
+  }
+  .convertion {
+    flex: 0 1 50%;
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      background-color: variables.$secondary-color;
+      line-height: 1;
+      height: 100%;
+      border-radius: 15px;
+      padding: 20px 10px 25px;
+      @include mixins.mq-down(md) {
+        border-radius: 5px;
+        padding: 10px 5px 15px;
+      }
+      @media (min-width: 835px) {
+        transition: background 0.3s;
+        &:hover {
+          background-color: #ff5731;
+        }
+      }
+    }
+    &_txt {
+      display: flex;
+      align-items: center;
+      position: relative;
+      font-size: 2.4rem;
+      font-weight: bold;
+      white-space: nowrap;
+      @include mixins.mq-down(md) {
+        font-size: 1.5rem;
+      }
+      &::before {
+        content: "";
+        display: block;
+        position: relative;
+        top: 3px;
+        flex-shrink: 0;
+        width: 1em;
+        height: 1em;
+        background: url(../img/guidance/ico-mail.png) no-repeat center center / contain;
+        margin-right: 10px;
+        @include mixins.mq-down(md) {
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+}

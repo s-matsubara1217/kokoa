@@ -1,0 +1,86 @@
+@charset "utf-8";
+
+//========================================
+// Variables
+//========================================
+
+// Colors
+$primary-color: #a1695c;
+$secondary-color: #fb856b;
+$third-color: #dedede;
+$fourth-color: #dedede;
+$fifth-color: #dedede;
+
+// Light and Dark color
+$primary-dark: #724a40;
+$primary-light: #dfc8c2;
+$primary-extra-light: #dedede;
+$secondary-light: #fdbeb0;
+$secondary-dark: #ff5731;
+
+// Background color
+$bg-color01: #fef6f4;
+$bg-color02: #dedede;
+$bg-color03: #dedede;
+$bg-color04: #dedede;
+$bg-color05: #dedede;
+
+// Gradient color
+$gradient01: linear-gradient(90deg, #dedede, #dedede);
+
+// Format color
+$txt-color: #4d3c37;
+$txt-gray-color: #999999;
+
+// Border color
+$border-color: #e5e5e5;
+$border-color02: #d5d5d5;
+
+// CUSTOM FONTS
+$font-Noto: 'Noto Sans JP';
+$font-Karla: 'Karla';
+
+//font-family
+$gothic-family: '游ゴシック', 'Yu Gothic', '游ゴシック体', YuGothic,
+  '游ゴシック Medium', 'Yu Gothic Medium', 'ヒラギノ角ゴ ProN W3',
+  'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, sans-serif;
+$round-gothic-family: 'ヒラギノ丸ゴ Pro W4', 'ヒラギノ丸ゴ Pro',
+  'Hiragino Maru Gothic Pro', 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro',
+  'HG丸ｺﾞｼｯｸM-PRO', 'HGMaruGothicMPRO';
+$mincho-family: '游明朝', 'Yu Mincho', '游明朝体', 'YuMincho',
+  'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'HiraMinProN-W3', 'HGS明朝E',
+  'ＭＳ Ｐ明朝', 'MS PMincho', serif;
+$hi-gothic: 'ヒラギノ角ゴ ProN W7', 'Hiragino Kaku Gothic ProN', sans-serif;
+
+$default-family: $font-Noto, $gothic-family;
+$default-family-ie: $font-Noto, 'メイリオ', Meiryo, sans-serif;
+$mincho-ie: 'ＭＳ Ｐ明朝', 'MS PMincho', serif;
+
+// cubic-bezier
+// 徐々に加速 - 徐々に減速 上から「小・中・大」
+$bezier-easeOutSine: cubic-bezier(0.61, 1, 0.88, 1);
+$bezier-easeOutCubic: cubic-bezier(0.33, 1, 0.68, 1);
+$bezier-easeOutQuint: cubic-bezier(0.23, 1, 0.32, 1);
+// バウンド
+$bezier-easeInBack: cubic-bezier(0.36, 0, 0.66, -0.56);
+$bezier-easeOutBack: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+// min-width
+$breakpoint-up: (
+  'xs': 'screen and (min-width: 321px)',
+  'sm': 'screen and (min-width: 481px)',
+  'md': 'screen and (min-width: 769px)',
+  'lg': 'screen and (min-width: 1025px)',
+  'xl': 'screen and (min-width: 1201px)',
+  'xxl': 'screen and (min-width: 1441px)',
+) !default;
+
+// max-width
+$breakpoint-down: (
+  'xs': 'screen and (max-width: 320px)',
+  'sm': 'screen and (max-width: 480px)',
+  'md': 'screen and (max-width: 768px)',
+  'lg': 'screen and (max-width: 1024px)',
+  'xl': 'screen and (max-width: 1200px)',
+  'xxl': 'screen and (max-width: 1440px)',
+) !default;

@@ -1,0 +1,245 @@
+@charset "utf-8";
+
+@use './variables';
+@use './mixins';
+
+/* ============================================
+// RESET
+// ==========================================*/
+
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+
+a {
+  outline: none;
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  vertical-align: bottom;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.clearfix:after {
+  content: '.';
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+::-moz-selection {
+  background: #262626;
+  color: #ffffff;
+}
+
+::selection {
+  background: #262626;
+  color: #ffffff;
+}
+
+.eng {
+  font-family: 'Karla', sans-serif;
+  letter-spacing: 0.1em;
+}
+
+@media (min-device-width: 768px) {
+  a[href^='tel:'] {
+    cursor: default;
+    pointer-events: none;
+  }
+}
+
+/* ============================================
+// BASE
+// ==========================================*/
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  min-width: 1100px;
+  font-family: variables.$default-family;
+  font-weight: 500;
+  font-size: 1.5rem;
+  color: variables.$txt-color;
+  line-height: 2;
+  letter-spacing: 0.075em;
+  -webkit-text-size-adjust: 100%;
+  -webkit-overflow-scrolling: touch;
+  background: #fff;
+
+  @include mixins.mq-down(md) {
+    min-width: 320px;
+  }
+}
+
+/* for IE11 + */
+_:-ms-lang(x)::-ms-backdrop,
+body {
+  font-family: variables.$default-family-ie;
+}
+
+#container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+a {
+  color: variables.$txt-color;
+}
+
+/* classes */
+.ofi {
+  -o-object-fit: cover;
+  object-fit: cover;
+  font-family: 'object-fit: cover;';
+  width: 100%;
+  height: 100%;
+}
+
+/* img-box */
+.img-box {
+  position: relative;
+  display: block;
+  img,
+  svg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+/* img-thumbnail */
+.img-thumbnail {
+  position: relative;
+  display: block;
+  img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    margin: 0 auto;
+  }
+}
+
+/* Padding-X 50px */
+.px-50 {
+  padding-right: 50px;
+  padding-left: 50px;
+  @include mixins.mq-down(md) {
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+  @include mixins.mq-down(sm) {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}
+
+/* Padding-X 40px */
+.px-40 {
+  padding-right: 40px;
+  padding-left: 40px;
+  @include mixins.mq-down(md) {
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+  @include mixins.mq-down(sm) {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}
+
+/* Padding-X 30px */
+.px-30 {
+  padding-right: 30px;
+  padding-left: 30px;
+  @include mixins.mq-down(sm) {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}
+
+/* innerWrap */
+.innerWrap {
+  max-width: 1280px;
+  padding: 0 40px;
+  margin: 0 auto;
+
+  @include mixins.mq-down(md) {
+    padding: 0 30px;
+  }
+  @include mixins.mq-down(sm) {
+    padding: 0 15px;
+  }
+}
+
+
+/*------------------------------
+ 表示 / 非表示
+------------------------------*/
+.u-pcOnly {
+  @include mixins.mq-down(md) {
+    display: none;
+  }
+}
+.u-spOnly {
+  @include mixins.mq-up(md) {
+    display: none;
+  }
+}

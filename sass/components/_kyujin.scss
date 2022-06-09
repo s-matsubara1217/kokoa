@@ -1,0 +1,336 @@
+// Foundation
+@use '../foundation/variables';
+@use '../foundation/mixins';
+
+// LOWER-KYUJIN_L & LOWER-WHATSNEW
+.lower-kyujin_l {
+  .kyujin_container {
+    padding-top: 40px;
+    padding-bottom: 80px;
+    @include mixins.mq-down(md) {
+      padding-bottom: 30px;
+      padding-right: 30px;
+      padding-left: 30px;
+    }
+    @include mixins.mq-down(sm) {
+      padding-top: 30px;
+      padding-bottom: 0;
+      padding-right: 15px;
+      padding-left: 15px;
+    }
+    .search_panel {
+      padding-right: 80px;
+      padding-left: 80px;
+      border-radius: 20px;
+      border: 2px dotted rgba(variables.$primary-color, 0.35);
+      @include mixins.mq-down(md) {
+        padding-right: 30px;
+        padding-left: 30px;
+      }
+      @include mixins.mq-down(sm) {
+        padding-right: 15px;
+        padding-left: 15px;
+        border-radius: 10px;
+      }
+      .custom-form {
+        margin-top: 20px;
+        margin-bottom: 40px;
+      }
+    }
+    .job_count_pager {
+      &.contents_bottom {
+        padding-top: 40px;
+        @include mixins.mq-down(md) {
+          padding-top: 20px;
+        }
+        .pagination {
+          padding-top: 40px;
+          @include mixins.mq-down(md) {
+            padding-top: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// LOWER-KYUJIN_D
+.lower-kyujin_d {
+  .kyujin_container {
+    padding-top: 40px;
+    padding-bottom: 80px;
+    @include mixins.mq-down(md) {
+      padding-top: 20px;
+      padding-bottom: 50px;
+    }
+    @include mixins.mq-down(sm) {
+      padding-top: 12px;
+      padding-bottom: 0;
+    }
+    .search_panel {
+      padding-right: 80px;
+      padding-left: 80px;
+      .custom-form {
+        margin-top: 20px;
+        margin-bottom: 40px;
+      }
+    }
+    .job_occupations {
+      &:after {
+        background: variables.$primary-color;
+      }
+    }
+    .outline {
+      &_ttl {
+        color: #fff;
+        &:after {
+          border-radius: 15px 15px 15px 0px;
+          background: variables.$primary-color;
+          @include mixins.mq-down(sm) {
+            border-radius: 10px 10px 10px 0px;
+          }
+        }
+      }
+    }
+    .appeal {
+      &_ttl {
+        color: #fff;
+        &:after {
+          border-radius: 15px 15px 15px 0px;
+          background: variables.$primary-color;
+          @include mixins.mq-down(sm) {
+            border-radius: 10px 10px 10px 0px;
+          }
+        }
+      }
+      &_list {
+        &_item {
+          &_head {
+            color: variables.$primary-color;
+            .toggle-ico {
+              &:before,
+              &:after {
+                background: variables.$primary-color;
+              }
+            }
+          }
+        }
+      }
+    }
+    .btn-box {
+      width: 100%;
+      max-width: 300px;
+      height: 60px;
+      margin: 0 auto;
+      @include mixins.mq-down(md) {
+        margin-top: 30px;
+        height: 50px;
+      }
+      @include mixins.mq-down(sm) {
+        padding-right: 10%;
+        padding-left: 10%;
+      }
+    }
+  }
+}
+
+// KYUJIN-CONTAINER
+.kyujin_container {
+  a {
+    color: variables.$primary-color;
+  }
+  .search-toggle {
+    background: variables.$primary-color;
+  }
+  .job_occupations {
+    &:after {
+      background: variables.$primary-color;
+    }
+  }
+  .job_workplace_ttl,
+  .result_total_all {
+    color: variables.$secondary-color;
+  }
+  .job_body_head_txt_inner {
+    .job_post_ttl {
+      color: variables.$primary-color;
+      &:before {
+        background: variables.$primary-color;
+      }
+    }
+  }
+  .job_employmenttype_list_item {
+    color: variables.$primary-color;
+    border: 1px solid variables.$primary-color;
+    border-radius: 4px;
+    &:first-letter {
+      color: variables.$primary-color;
+    }
+  }
+  .gMap_link {
+    color: variables.$primary-color;
+    @include mixins.mq-up(md) {
+      transition: color 300ms variables.$bezier-easeOutCubic;
+      &:hover {
+        color: darken(variables.$primary-color, 10);
+      }
+    }
+    &:before {
+      background: url(../img/kyujin/ico_custom_location_color.png) no-repeat
+        center center/contain;
+    }
+  }
+  .job_count_pager {
+    .pagination {
+      em,
+      a {
+        width: 30px;
+        height: 30px;
+        line-height: 1;
+      }
+    }
+  }
+  .btn {
+    height: 60px;
+    background: variables.$primary-color;
+    border-radius: 5px;
+    transition: background-color 300ms variables.$bezier-easeOutCubic;
+    @include mixins.mq-up(md) {
+      &:hover {
+        opacity: 1;
+        background: variables.$primary-dark;
+      }
+    }
+    @include mixins.mq-down(md) {
+      height: 50px;
+    }
+    &.btn_external {
+      background: variables.$secondary-color;
+      transition: background-color 300ms variables.$bezier-easeOutCubic;
+      @include mixins.mq-up(md) {
+        &:hover {
+          opacity: 1;
+          background: variables.$secondary-dark;
+        }
+      }
+      &:after {
+        top: 8px;
+        right: 8px;
+      }
+    }
+  }
+}
+
+// PAGINATION
+.pagination {
+  li {
+    margin: 0 2px;
+    em {
+      background: variables.$primary-color;
+    }
+    a {
+      transition: color 300ms variables.$bezier-easeOutCubic,
+        background 300ms variables.$bezier-easeOutCubic;
+      @include mixins.mq-up(md) {
+        &:hover {
+          color: #fff;
+          background: variables.$primary-color;
+        }
+      }
+    }
+    em,
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      border-radius: 50%;
+    }
+    &.number {
+      a {
+        color: variables.$secondary-color;
+        background: variables.$bg-color01;
+        border: 1px solid variables.$secondary-color;
+        @include mixins.mq-up(md) {
+          &:hover {
+            background: variables.$secondary-color;
+            color: #fff;
+          }
+        }
+      }
+      em {
+        background: variables.$secondary-color;
+      }
+    }
+    &.arrow {
+      &.prev {
+        margin-left: 0;
+        margin-right: 20px;
+        @include mixins.mq-down(md) {
+          margin-right: 8px;
+        }
+        .icon {
+          transform: scaleX(-1);
+        }
+      }
+      &.next {
+        margin-left: 20px;
+        margin-right: 0;
+        @include mixins.mq-down(md) {
+          margin-left: 8px;
+        }
+      }
+      a {
+        color: #fff;
+        background: variables.$primary-color;
+        border-radius: 10px;
+        @include mixins.mq-up(md) {
+          &:hover {
+            background: variables.$primary-dark;
+          }
+        }
+        .icon {
+          width: 18px;
+          .img-box {
+            padding-top: 100%;
+            svg {
+              fill: #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// FIXED-CONVERTION
+.fixed_convertion {
+  background: variables.$txt-color;
+  &_inner {
+    .phone {
+      .phone_num,
+      .phone_notes {
+        @include mixins.mq-down(md) {
+          color: variables.$primary-color;
+        }
+      }
+    }
+  }
+  .convertion {
+    .btn_convertion {
+      border-radius: 5px;
+      background: variables.$secondary-color;
+      transition: background 300ms variables.$bezier-easeOutCubic;
+      &:after {
+        top: 8px;
+        right: 8px;
+      }
+      @include mixins.mq-up(md) {
+        &:hover {
+          opacity: 1;
+          background: variables.$secondary-dark;
+        }
+      }
+    }
+  }
+}

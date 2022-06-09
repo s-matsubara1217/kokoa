@@ -1,0 +1,264 @@
+// Foundation
+@use '../foundation/variables';
+@use '../foundation/mixins';
+
+/* ============================================
+// よくある質問
+// ==========================================*/
+
+.lower-faq {
+
+  .faq {
+    margin-top: 24px;
+
+    &__list {
+      &__item {
+        margin-top: 32px;
+        @include mixins.mq-down(md) {
+          margin-top: 24px;
+        }
+
+        &:first-child {
+          margin-top: 0;
+        }
+
+        .question {
+          font-size: 1.6rem;
+          position: relative;
+          @include mixins.mq-down(md) {
+            font-size: 1.5rem;
+          }
+
+          &::before {
+            content: 'Q';
+            display: inline-block;
+            font-family: variables.$font-Karla;
+            color: #fb856b;
+            margin-right: 12px;
+            font-weight: bold;
+            font-size: 2.4rem;
+            line-height: 1;
+            @include mixins.mq-down(md) {
+              font-size: 2.2rem;
+              margin-right: 6px;
+            }
+          }
+        }
+        .answer {
+          font-size: 1.4rem;
+          background-color: #fef6f4;
+          padding: 24px 30px;
+          border-radius: 5px;
+          margin-top: 8px;
+          @include mixins.mq-down(md) {
+            padding: 20px 24px;
+          }
+        }
+      }
+    }
+  }
+
+  .tab{
+    border-bottom: 3px solid #f67f67;
+
+    &__inner {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: flex-end;
+      max-width: 1080px;
+    }
+    &__item {
+      flex: 1 1 auto;
+      text-align: center;
+
+      &.active {
+        a {
+          background:#f67f67;
+          color: #fff;
+          padding: 22px 18px;
+          font-size: 1.8rem;
+          position: relative;
+          @include mixins.mq-down(md) {
+            padding: 14px 12px;
+            font-size: 1.6rem;
+          }
+
+          &::before {
+            opacity: 1;
+            transform: translate(-50%,-50%);
+            @include mixins.mq-down(md) {
+              transform: translate(-50%,-50%) scale(0.8);
+            }
+          }
+        }
+      }
+
+      a {
+        display: block;
+        background:#fef6f4;
+        color: #f67f67;
+        padding: 18px;
+        border-radius: 5px 5px 0 0;
+        font-size: 1.5rem;
+        transition: all 0.3s;
+        @include mixins.mq-down(md) {
+          padding: 10px;
+          font-size: 1.4rem;
+        }
+
+        &::before {
+          content: '';
+          display: inline-block;
+          width: 52px;
+          height: 31px;
+          background-image: url(../img/faq/ico_face.png);
+          background-repeat: no-repeat;
+          background-size: contain;
+          position: absolute;
+          top: 0;
+          left: 50%;
+          transform: translate(-50%,0);
+          opacity: 0;
+          transition: all 0.3s;
+          @include mixins.mq-down(md) {
+            transform: translate(-50%,0) scale(0.8);
+          }
+        }
+      }
+    }
+  }
+
+  @keyframes displayAnime{
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  .area {
+    display: none;
+    opacity: 0;
+    background: #fff;
+    background-image: url(../img/common/bg_dotted_brown.png);
+    width: 100%;
+    height: 100%;
+    background-repeat: repeat;
+    padding-top: 72px;
+    position: relative;
+    padding-bottom: 120px;
+    @include mixins.mq-down(md) {
+      padding-top: 40px;
+      padding-bottom: 56px;
+      background-size: 20px;
+    }
+
+    &#tab01 {
+      .sec-ttl04 {
+        .en {
+          span {
+            &:nth-child(3) {
+              margin-right: 4px;
+            }
+            &:nth-child(7) {
+              margin-right: 4px;
+            }
+          }
+        }
+      }
+    }
+    &#tab02 {
+      .sec-ttl04 {
+        .en {
+          span {
+            &:nth-child(3) {
+              margin-right: 4px;
+            }
+          }
+        }
+      }
+    }
+
+    &:before {
+      content: "";
+      display: inline-block;
+      background-color: #fef6f4;
+      position: absolute;
+      width: 100%;
+      height: 264px;
+      bottom: 0;
+      right: 0;
+      z-index: -2;
+      @include mixins.mq-down(md) {
+        height: 180px;
+      }
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 264px;
+      right: 0;
+      width: 100%;
+      height: 80px;
+      background: url(../img/common/bg_wave-b_bg.svg) repeat-x right top/900px 80px;
+      z-index: -1;
+      @include mixins.mq-down(md) {
+        height: 40px;
+        background-size: 450px 40px;
+        bottom: 180px;
+      }
+    }
+
+    &.is-active {
+      display: block;/*表示*/
+      animation-name: displayAnime;/*ふわっと表示させるためのアニメーション*/
+      animation-duration: 0.2s;
+      animation-fill-mode: forwards;
+    }
+
+    &__wrap {
+      max-width: 1080px;
+    }
+    &__inner {
+      background-color: #fff;
+      padding: 56px 72px;
+      border-radius: 15px;
+      position: relative;
+      box-shadow: 0px 0px 40px -32px #777777;
+      @include mixins.mq-down(md) {
+        padding: 44px 32px;
+      }
+
+      &::before {
+        content: "";
+        box-sizing: border-box;
+        width: calc(100% - 24px);
+        height: calc(100% - 24px);
+        position: absolute;
+        z-index: 1;
+        top: 12px;
+        left: 12px;
+        border: 2px dotted rgba(161, 105, 92, 0.35);
+        border-radius: 10px;
+        pointer-events: none;
+      }
+    }
+
+    .head {
+
+    }
+    .body {
+      margin-top: 32px;
+      @include mixins.mq-down(md) {
+        margin-top: 20px;
+      }
+    }
+
+  }
+
+  .breadcrumb {
+    background-color: #fef6f4;
+  }
+
+}

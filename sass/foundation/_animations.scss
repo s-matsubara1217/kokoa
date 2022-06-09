@@ -1,0 +1,355 @@
+@use './variables';
+@use './mixins';
+
+/*========================================
+\\ Animation
+//======================================*/
+// animation
+.anime {
+  &.-fadeIn {
+    opacity: 0;
+    &.js-active {
+      @include mixins.animation(
+        fadein-opacity 600ms variables.$bezier-easeOutSine 100ms
+      );
+    }
+  }
+  &.-slideIn-b-40 {
+    opacity: 0;
+    &.js-active {
+      @include mixins.animation(
+        fadein-b-40 500ms variables.$bezier-easeOutSine 100ms
+      );
+    }
+  }
+  &.-boundOut-b-40 {
+    opacity: 0;
+    &.js-active {
+      @include mixins.animation(
+        fadein-b-40 800ms variables.$bezier-easeOutBack 100ms
+      );
+    }
+  }
+  &.-slideIn-r-40 {
+    opacity: 0;
+    &.js-active {
+      @include mixins.animation(
+        fadein-r-40 500ms variables.$bezier-easeOutSine 100ms
+      );
+    }
+  }
+  &.-slideIn-l-40 {
+    opacity: 0;
+    &.js-active {
+      @include mixins.animation(
+        fadein-l-40 500ms variables.$bezier-easeOutSine 100ms
+      );
+    }
+  }
+  &.-scale-08 {
+    opacity: 0;
+    transform: scale(0.8);
+
+    &.js-active {
+      @include mixins.animation(
+        scale-08-1 500ms variables.$bezier-easeOutSine 100ms
+      );
+    }
+  }
+  &.-scale {
+    opacity: 0;
+    transform: scale(0.8);
+
+    &.js-active {
+      @include mixins.animation(
+        scale-0-1 500ms variables.$bezier-easeOutSine 100ms
+      );
+
+      &.-delay01 {
+        animation-delay: 0.2s;
+      }
+      &.-delay02 {
+        animation-delay: 0.4s;
+      }
+    }
+  }
+
+  // @for
+  &.-for-boundIn-b-40 {
+    span {
+      display: inline-block;
+      opacity: 0;
+    }
+    &.js-active {
+      @for $i from 1 through 30 {
+        span:nth-child(#{$i}) {
+          @include mixins.animation(
+            fadein-b-40 600ms variables.$bezier-easeOutBack ($i * 35ms)
+          );
+        }
+      }
+      &.-delay {
+        @for $i from 1 through 30 {
+          span:nth-child(#{$i}) {
+            @include mixins.animation(
+              fadein-b-40 600ms variables.$bezier-easeOutBack
+                (($i * 50ms) + 400ms)
+            );
+          }
+        }
+      }
+    }
+  }
+  &.-for-boundIn-r-40 {
+    span {
+      display: inline-block;
+      opacity: 0;
+    }
+    &.js-active {
+      @for $i from 1 through 20 {
+        span:nth-child(#{$i}) {
+          @include mixins.animation(
+            fadein-r-40 600ms variables.$bezier-easeOutSine ($i * 35ms)
+          );
+        }
+      }
+      &.-delay {
+        @for $i from 1 through 20 {
+          span:nth-child(#{$i}) {
+            @include mixins.animation(
+              fadein-r-40 600ms variables.$bezier-easeOutSine
+                (($i * 50ms) + 400ms)
+            );
+          }
+        }
+      }
+    }
+  }
+}
+
+// 汎用アニメーション
+// FADEIN
+@include mixins.keyframes(fadein-r-40) {
+  0% {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@include mixins.keyframes(fadein-l-40) {
+  0% {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@include mixins.keyframes(fadein-b-40) {
+  0% {
+    opacity: 0;
+    transform: translate(0, 40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+@include mixins.keyframes(fadein-b-20) {
+  0% {
+    opacity: 0;
+    transform: translate(0, 20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+@include mixins.keyframes(fadein-rb-20) {
+  0% {
+    opacity: 0;
+    transform: translate(20px, 20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+@include mixins.keyframes(fadein-rb-40) {
+  0% {
+    opacity: 0;
+    transform: translate(40px, 40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+@include mixins.keyframes(fadein-opacity) {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@include mixins.keyframes(fadein-scale) {
+  0% {
+    opacity: 0;
+    transform: scale(0.2);
+  }
+  50% {
+    transform: scale(1.115);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@include mixins.keyframes(fadein-b-scale) {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.2);
+  }
+  50% {
+    transform: translateY(-10px) scale(1.115);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@include mixins.keyframes(fadein-b-rotateX) {
+  0% {
+    opacity: 0;
+    transform: translateY(10%) rotateX(90deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotateX(0);
+  }
+}
+@include mixins.keyframes(fadein-l-rotateY) {
+  0% {
+    opacity: 0;
+    transform: translateX(-10%) rotateY(90deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) rotateY(0);
+  }
+}
+
+// SCALE ANIMATION
+@include mixins.keyframes(scale-0-1) {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@include mixins.keyframes(scale-08-1) {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@include mixins.keyframes(scale-1-0) {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@include mixins.keyframes(scaleX-0-1) {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+@include mixins.keyframes(scaleX-1-0) {
+  0% {
+    transform: scaleX(1);
+  }
+  100% {
+    transform: scaleX(0);
+  }
+}
+@include mixins.keyframes(scaleX-0-1-0) {
+  0% {
+    transform-origin: left;
+    transform: scaleX(0);
+  }
+  45% {
+    transform: scaleX(1);
+  }
+  50% {
+    transform-origin: left;
+  }
+  51% {
+    transform-origin: right;
+  }
+  65% {
+    transform: scaleX(1);
+  }
+  100% {
+    transform-origin: right;
+    transform: scaleX(0);
+  }
+}
+@include mixins.keyframes(scaleY-0-1) {
+  0% {
+    transform: scaleY(0);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+@include mixins.keyframes(scaleY-1-0) {
+  0% {
+    transform: scaleY(1);
+  }
+  100% {
+    transform: scaleY(0);
+  }
+}
+
+// 固有アニメーション
+
+// INDEX
+@include mixins.keyframes(scroll-line-animation) {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+@include mixins.keyframes(split-span-wave) {
+  0% {
+    transform: translateY(0em);
+  }
+  40% {
+    transform: translateY(-0.5em);
+  }
+  60% {
+    transform: translateY(0em);
+  }
+  100% {
+    transform: translateY(0em);
+  }
+}

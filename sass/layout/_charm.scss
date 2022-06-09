@@ -1,0 +1,602 @@
+// Foundation
+@use '../foundation/variables';
+@use '../foundation/mixins';
+
+/* ============================================
+// ココアの魅力
+// ==========================================*/
+
+.lower-charm {
+
+  .l-main {
+    &__mv {
+      padding-bottom: 16px;
+      @include mixins.mq-down(md) {
+        padding-bottom: 0;
+      }
+      &:before {
+        content: none;
+      }
+      &:after {
+        content: '';
+        position: absolute;
+        z-index: 10;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 80px;
+        background: url('../img/common/bg_wave-t_bg.svg') repeat-x right top /
+          900px 80px;
+        transform: translateY(100%);
+        @include mixins.mq-down(sm) {
+          background-size: 450px 40px;
+          height: 40px;
+        }
+      }
+    }
+  }
+  .charm {
+    padding-top: 180px;
+    position: relative;
+    @include mixins.mq-down(md) {
+      padding-top: 72px;
+    }
+
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 23%;
+      height: calc(100% + 40px);
+      background-image: url(../img/common/bg_dotted_brown.png);
+      background-repeat: repeat;
+      position: absolute;
+      top: -40px;
+      left: 0;
+      @include mixins.mq-down(md) {
+        background-size: 20px;
+      }
+    }
+
+    &__head {
+      padding-bottom: 72px;
+      @include mixins.mq-down(md) {
+        padding-bottom: 48px;
+      }
+
+      .innerWrap {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        @include mixins.mq-down(md) {
+          display: block;
+        }
+      }
+      .img-holder {
+        flex: 0 0 43.8%;
+        margin-right: 6.5%;
+        @include mixins.mq-up(md) {
+          margin-bottom: 182px;
+        }
+        @media screen and (min-width:768px) and (max-width:1024px) {
+          margin-left: 32px;
+          margin-right: 5%;
+        }
+        @include mixins.mq-down(md) {
+          margin-top: 24px;
+          margin-right: 0;
+        }
+
+        .img {
+          &:first-child {
+            @include mixins.keepAspect(112.3%);
+            max-width: 380px;
+            @include mixins.mq-down(md) {
+              width: 70%;
+              max-width: 250px;
+              margin: 0 auto;
+            }
+          }
+          &:nth-child(2) {
+            @include mixins.keepAspect(73.9%);
+            max-width: 230px;
+            margin-top: -48px;
+            margin-left: 248px;
+            @include mixins.mq-down(md) {
+              max-width: 161px;
+              margin-top: -80px;
+              margin-left: 190px;
+            }
+          }
+          &:nth-child(3) {
+            @include mixins.keepAspect(72.7%);
+            max-width: 169px;
+            margin-top: -305px;
+            margin-left: -48px;
+            @include mixins.mq-down(md) {
+              max-width: 118px;
+              margin-top: -180px;
+              margin-left: 0;
+            }
+          }
+
+          img {
+            border-radius: 5px;
+          }
+        }
+      }
+      .txt-holder {
+        flex: 1 1 auto;
+        margin-top: -4px;
+        .lead {
+          font-size: 2.4rem;
+          color: #f67f67;
+          line-height: 1.7;
+          @include mixins.mq-down(md) {
+            font-size: 1.9rem;
+          }
+        }
+        .desc {
+          font-size: 1.5rem;
+          margin-top: 32px;
+          @include mixins.mq-down(md) {
+            margin-top: calc(24px + 96px);
+          }
+        }
+      }
+    }
+    &__body {
+
+      .sec__merit {
+        background-color: #fef6f4;
+        padding: 72px 0;
+        @include mixins.mq-down(md) {
+          padding: 48px 0;
+        }
+
+        .merit {
+          .head {
+
+          }
+          .body {
+            margin-top: 32px;
+            @include mixins.mq-down(md) {
+              margin-top: 24px;
+            }
+          }
+
+          &__list {
+            &__item {
+              display: flex;
+              justify-content: flex-start;
+              align-items: flex-start;
+              margin-top: 48px;
+              @include mixins.mq-down(md) {
+                display: block;
+                margin-top: 30px;
+              }
+
+              &:first-child {
+                margin-top: 0;
+              }
+
+              .img-holder {
+                flex: 0 0 31.8%;
+                max-width: 350px;
+                margin-right: 5.4%;
+                @include mixins.mq-down(md) {
+                  margin-right: 0;
+                  margin-top: 16px;
+                }
+
+                .img {
+                  @include mixins.keepAspect(66.5%);
+
+                  img {
+                    border-radius: 5px;
+                  }
+                }
+              }
+              .txt-holder {
+                flex: 1 1 auto;
+
+                .term-holder {
+                  display: flex;
+                  justify-content: flex-start;
+                  align-items: flex-start;
+
+                  .point-holder {
+                    flex: 0 0 75px;
+                    margin-right: 16px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    background-color: #4d3c37;
+                    color: #ffffff;
+                    border-radius: 50%;
+                    height: 75px;
+                    @include mixins.mq-down(md) {
+                      flex: 0 0 60px;
+                      height: 60px;
+                      margin-right: 12px;
+                    }
+
+                    .point {
+                      font-size: 1.2rem;
+                      line-height: 1;
+                      @include mixins.mq-down(md) {
+                        font-size: 1rem;
+                      }
+                    }
+                    .num {
+                      font-size: 3.2rem;
+                      line-height: 1;
+                      @include mixins.mq-down(md) {
+                        font-size: 2.4rem;
+                      }
+                    }
+                  }
+                  .term {
+                    flex: 1 1 auto;
+                    font-size: 2.2rem;
+                    line-height: 1.7;
+                    color: #f67f67;
+                    @include mixins.mq-down(md) {
+                      font-size: 1.8rem;
+                    }
+                  }
+                }
+                .desc-holder {
+                  margin-top: 12px;
+                  @include mixins.mq-down(md) {
+                    margin-top: 16px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      .sec__rewarding {
+        padding: 72px 0 56px;
+        position: relative;
+        @include mixins.mq-down(md) {
+          padding: 48px 0;
+        }
+
+        .rewarding {
+          .head {
+
+          }
+          .body {
+            margin-top: 32px;
+            @include mixins.mq-down(md) {
+              margin-top: 30px;
+            }
+          }
+
+          &__list {
+            display: flex;
+            justify-content: flex-start;
+            align-items: stretch;
+            @include mixins.mq-down(md) {
+              display: block;
+            }
+
+            &__item {
+              width: 47%;
+              margin-right: 6%;
+              @include mixins.mq-down(md) {
+                width: 100%;
+                margin-top: 28px;
+
+                &:first-child {
+                  margin-top: 0;
+                }
+              }
+
+              &:nth-child(2n+2) {
+                margin-right: 0;
+              }
+
+              .term-holder {
+                display: flex;
+                justify-content: flex-start;
+                align-items: flex-start;
+
+                .img-holder {
+                  flex: 0 0 20.2%;
+                  max-width: 105px;
+                  margin-right: 3.8%;
+                  position: relative;
+                  @include mixins.mq-down(md) {
+                    flex: 0 0 28%;
+                    margin-right: 4%;
+                  }
+
+                  &:before {
+                    content: '';
+                    display: inline-grid;
+                    width: 30px;
+                    height: 30px;
+                    background-image: url(../img/charm/ico_crown.png);
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+                    z-index: 2;
+                    @include mixins.mq-down(md) {
+                      width: 28px;
+                      height: 28px;
+                    }
+                  }
+
+                  .img {
+                    @include mixins.keepAspect(100%);
+
+                    img {
+                      border-radius: 50%;
+                      border: 2px solid #f67f67;
+                    }
+                  }
+                }
+                .txt-holder {
+                  flex: 1 1 auto;
+
+                  .budge {
+                    background-color: #4d3c37;
+                    padding: 2px 14px;
+                    border-radius: 100px;
+                    display: inline-block;
+                    @include mixins.mq-down(md) {
+                      padding: 0 14px;
+                    }
+
+                    .jobs {
+                      color: #fff;
+                      @include mixins.mq-down(md) {
+                        font-size: 1.3rem;
+                      }
+                    }
+                  }
+                  .term {
+                    font-size: 2rem;
+                    color: #f67f67;
+                    line-height: 1.7;
+                    margin-top: 16px;
+                    @include mixins.mq-down(md) {
+                      font-size: 1.7rem;
+                      margin-top: 12px;
+                    }
+                  }
+                }
+              }
+              .desc-holder {
+                margin-top: 24px;
+                @include mixins.mq-down(md) {
+                  margin-top: 12px;
+                }
+              }
+            }
+          }
+        }
+      }
+      .sec__vision {
+        padding-bottom: 108px;
+        position: relative;
+        z-index: 10;
+        @include mixins.mq-down(md) {
+          padding-bottom: 48px;
+        }
+
+        &::before {
+          content: '';
+          display: inline-block;
+          background-color: #fef6f4;
+          position: absolute;
+          width: 100%;
+          top: 350px;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          z-index: 1;
+          @include mixins.mq-down(md) {
+            top: 200px;
+          }
+        }
+        &::after {
+          content: "";
+          position: absolute;
+          top: 350px;
+          left: 0;
+          width: 100%;
+          height: 80px;
+          background: url(../img/common/bg_wave-b_bg.svg) repeat-x left top/900px 80px;
+          transform: translateY(-100%);
+          z-index: -1;
+          @include mixins.mq-down(md) {
+            height: 40px;
+            background-size: 450px 40px;
+            top: 200px;
+          }
+        }
+
+        .vision {
+          position: relative;
+          z-index: 2;
+          .head {
+
+          }
+          .body {
+            margin-top: 48px;
+            @include mixins.mq-down(md) {
+              margin-top: 32px;
+            }
+
+            .img-holder {
+              display: flex;
+              justify-content: flex-start;
+              align-items: flex-start;
+              max-width: 980px;
+              margin: 0 auto;
+              position: relative;
+
+              .img {
+                @include mixins.keepAspect(100%);
+                width: 28.6%;
+                max-width: 280px;
+                margin-right: 7.1%;
+                @include mixins.mq-down(md) {
+                  width: 30%;
+                  margin-right: 5%;
+                }
+
+                &:nth-child(3n+3) {
+                  margin-right: 0;
+                }
+
+                img {
+                  border-radius: 50%;
+                }
+              }
+            }
+            .txt-holder {
+              max-width: 870px;
+              margin: 40px auto 0;
+            }
+            .deco-holder {
+              // 位置
+              .dot {
+                  position: absolute;
+
+                  &-01 {
+                    top: -12px;
+                    left: -3.2%;
+                    @include mixins.mq-down(md) {
+                      top: 4px;
+                      left: -2.2%;
+                    }
+                  }
+                  &-02 {
+                    bottom: 40px;
+                    left: -1.5%;
+                    z-index: 2;
+                    @include mixins.mq-down(md) {
+                      bottom: 8px;
+                    }
+                  }
+                  &-03 {
+                    bottom: 4px;
+                    right: 21.4%;
+                    z-index: 2;
+                  }
+                  &-04 {
+                    bottom: 18px;
+                    right: -6.1%;
+                    @include mixins.mq-down(md) {
+                      right: -2.1%;
+                    }
+                  }
+              }
+              .circle {
+                  position: absolute;
+
+                  &-01 {
+                    top: 54px;
+                    left: 20.4%;
+
+                    .dot {
+                      position: absolute;
+                      top: -6px;
+                      left: 57%;
+                      @include mixins.mq-down(md) {
+                        top: -5px;
+                        left: 48%;
+                      }
+                    }
+                  }
+                  &-02 {
+                    top: -14px;
+                    right: 22.2%;
+
+                    .dot {
+                      position: absolute;
+                      bottom: -8px;
+                      right: 40.4%;
+                      @include mixins.mq-down(md) {
+                        bottom: -5px;
+                        right: 36%;
+                      }
+                    }
+                  }
+              }
+
+              // スタイル
+              .dot {
+                border-radius: 50%;
+
+                &.-small {
+                  width: 19px;
+                  height: 19px;
+                  @include mixins.mq-down(md) {
+                    width: 9px;
+                    height: 9px;
+                  }
+                }
+                &.-medium {
+                  width: 28px;
+                  height: 28px;
+                  @include mixins.mq-down(md) {
+                    width: 15px;
+                    height: 15px;
+                  }
+                }
+                &.-large {
+                  width: 53px;
+                  height: 53px;
+                  @include mixins.mq-down(md) {
+                    width: 20px;
+                    height: 20px;
+                  }
+                }
+                &.-brown {
+                  background-color: #4d3c37;
+                }
+                &.-orange {
+                  background-color: #f67f67;
+                }
+              }
+              .circle {
+                width: 193px;
+                height: 193px;
+                border-radius: 50%;
+                @include mixins.mq-down(md) {
+                  width: 80px;
+                  height: 80px;
+                }
+
+                &.-brown {
+                  border: 1px solid #4d3c37;
+                }
+                &.-orange {
+                  border: 1px solid #f67f67;
+                }
+              }
+            }
+          }
+        }
+      }
+
+    }
+
+    .innerWrap {
+      max-width: 1180px;
+    }
+
+  }
+  .breadcrumb {
+    background-color: #fef6f4;
+  }
+
+}

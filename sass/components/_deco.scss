@@ -1,0 +1,24 @@
+// Foundation
+@use '../foundation/variables';
+@use '../foundation/mixins';
+
+// ドット
+.dotted {
+  position: relative;
+  display: flex;
+  margin-left: 10px;
+  span {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    &:nth-child(odd) {
+      background: variables.$secondary-color;
+    }
+    &:nth-child(even) {
+      background: variables.$primary-color;
+    }
+    &:not(:last-child) {
+      margin-right: 5px;
+    }
+  }
+}

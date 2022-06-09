@@ -1,0 +1,170 @@
+// Foundation
+@use '../foundation/variables';
+@use '../foundation/mixins';
+
+// CUSTOM-FORM
+.custom-form {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+  &_inner {
+    display: block;
+  }
+  &_parts {
+    display: block;
+    border-bottom: none;
+    padding: 0;
+    &:not(:first-child) {
+      padding: 20px 0 0 0;
+      @include mixins.mq-down(sm) {
+        padding: 15px 0 0 0;
+      }
+    }
+    &:first-child {
+      border-top: none;
+    }
+    .parts_ttl {
+      display: inline-block;
+      padding: 0 10px;
+      font-size: 1.4rem;
+      border-radius: 0 5px 0 0;
+      color: #fff;
+      background: variables.$primary-color;
+      @include mixins.mq-down(sm) {
+        margin-bottom: 0;
+        padding: 0 8px 2px 10px;
+        font-size: 1.3rem;
+        font-weight: 500;
+      }
+      &:before {
+        content: none;
+      }
+    }
+    .form_parts_inner {
+      .pull-down {
+        &:after {
+          box-sizing: border-box;
+          color: #4e4d4d;
+          border-bottom: 1px solid;
+          border-right: 1px solid;
+        }
+        select {
+          background: variables.$bg-color01;
+          border-radius: 0 5px 5px 5px;
+          &.is-empty {
+            color: rgba(variables.$primary-color, 0.5);
+          }
+          @include mixins.mq-up(md) {
+            &:hover {
+              background: darken(variables.$bg-color01, 2);
+            }
+          }
+        }
+      }
+      .selCity-box {
+        margin-top: 10px;
+        padding: 0;
+        background: none;
+      }
+      .check-box {
+        padding: 12px 20px;
+        background: variables.$bg-color01;
+        border-radius: 0 5px 5px 5px;
+        .category_list {
+          li {
+            margin: 2px 10px 4px 0;
+            input[type='checkbox'] {
+              & + label {
+                a {
+                  transition: opacity 300ms variables.$bezier-easeOutCubic;
+                  @include mixins.mq-up(md) {
+                    &:hover {
+                      opacity: 0.8;
+                    }
+                  }
+                }
+                &:before {
+                  width: 15px;
+                  height: 15px;
+                  box-sizing: border-box;
+                  background: #fff;
+                  border: 1px solid variables.$border-color02;
+                }
+                &:after {
+                  top: 5px;
+                  left: 5px;
+                  box-sizing: border-box;
+                }
+              }
+              &:checked {
+                & + label {
+                  &:before {
+                    background: variables.$secondary-color;
+                    border: none;
+                  }
+                  &:after {
+                    transform: rotate(40deg);
+                    opacity: 1;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      .searchWord {
+        height: 50px;
+        background: variables.$bg-color01;
+        margin-right: 12px;
+        -webkit-appearance: none;
+        border-radius: 0 5px 5px 5px;
+        &::placeholder {
+          color: rgba(variables.$primary-color, 0.5);
+        }
+        @include mixins.mq-up(md) {
+          &:hover {
+            background: darken(variables.$bg-color01, 2);
+          }
+        }
+      }
+      .btn-box {
+        flex-shrink: 0;
+        width: 160px;
+        height: 100%;
+        @include mixins.mq-down(md) {
+          margin-top: 30px;
+          margin-left: auto;
+          width: 100%;
+          max-width: 250px;
+          height: 50px;
+        }
+        @include mixins.mq-down(sm) {
+          margin: 30px auto 0;
+        }
+        .icon-btn {
+          .link {
+            outline: none;
+            border: none;
+            background: variables.$secondary-color;
+            border-radius: 5px;
+            transition: background-color 300ms variables.$bezier-easeOutCubic;
+            @include mixins.mq-up(md) {
+              &:hover {
+                background-color: variables.$secondary-dark;
+              }
+            }
+          }
+        }
+      }
+      &.-col {
+        display: flex;
+        justify-content: space-between;
+        @include mixins.mq-down(md) {
+          display: block;
+        }
+      }
+    }
+  }
+}

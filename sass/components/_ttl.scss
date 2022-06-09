@@ -1,0 +1,327 @@
+// Foundation
+@use '../foundation/variables';
+@use '../foundation/mixins';
+
+// SECTION-TITLE01
+//
+// English
+// Japanese
+//
+.sec-ttl01 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1.4;
+  &.-col {
+    align-items: center;
+    .sub {
+      flex-direction: column;
+      .dotted {
+        margin-top: 14px;
+        margin-left: 0;
+      }
+    }
+    .ja {
+      margin-top: 14px;
+    }
+  }
+  .sub {
+    display: flex;
+    align-items: center;
+    .en {
+      font-size: 1.6rem;
+      font-family: variables.$font-Karla;
+      font-weight: 500;
+      text-transform: uppercase;
+      @include mixins.mq-down(md) {
+        font-size: 1.5rem;
+      }
+      @include mixins.mq-down(sm) {
+        font-size: 1.4rem;
+      }
+    }
+    .dotted {
+      position: relative;
+      display: flex;
+      margin-left: 10px;
+      span {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        &:nth-child(odd) {
+          background: variables.$secondary-color;
+        }
+        &:nth-child(even) {
+          background: variables.$primary-color;
+        }
+        &:not(:last-child) {
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+  .ja {
+    margin-top: 6px;
+    font-size: 3.2rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    @include mixins.mq-down(md) {
+      margin-top: 2px;
+      font-size: 2.4rem;
+      letter-spacing: 0.12em;
+    }
+    @include mixins.mq-down(sm) {
+      font-size: 2.2rem;
+    }
+  }
+}
+.sec-ttl02 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1.4;
+  &.-col {
+    align-items: center;
+    .sub {
+      flex-direction: column;
+      .dotted {
+        margin-left: 0;
+      }
+      .en {
+        margin-top: 8px;
+      }
+    }
+    .ja {
+      margin-top: 8px;
+    }
+  }
+  .sub {
+    display: flex;
+    align-items: center;
+    .en {
+      font-size: 3rem;
+      font-family: variables.$font-Karla;
+      font-weight: 500;
+      text-transform: uppercase;
+      color: #fb856b;
+      letter-spacing: 0.2em;
+    }
+    .dotted {
+      position: relative;
+      display: flex;
+      margin-left: 10px;
+      span {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        &:nth-child(odd) {
+          background: variables.$secondary-color;
+        }
+        &:nth-child(even) {
+          background: variables.$primary-color;
+        }
+        &:not(:last-child) {
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+  .ja {
+    margin-top: 6px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+  }
+}
+.sec-ttl03 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1.4;
+  &.-col {
+    align-items: center;
+    .sub {
+      flex-direction: column;
+      .en {
+        margin-top: 6px;
+      }
+    }
+    .ja {
+      margin-top: 14px;
+      @include mixins.mq-down(md) {
+        margin-top: 12px;
+      }
+    }
+    .dotted {
+      margin-left: 0;
+    }
+  }
+  .sub {
+    display: flex;
+    align-items: center;
+    .en {
+      font-size: 1.2rem;
+      font-family: variables.$font-Karla;
+      font-weight: 500;
+      text-transform: uppercase;
+      color: #fb856b;
+      letter-spacing: 0.2em;
+    }
+    .dotted {
+      position: relative;
+      display: flex;
+      span {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        &:nth-child(odd) {
+          background: variables.$secondary-color;
+        }
+        &:nth-child(even) {
+          background: variables.$primary-color;
+        }
+        &:not(:last-child) {
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+  .ja {
+    margin-top: 6px;
+    font-size: 3rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    color: rgba(variables.$txt-color, 90%);
+    @include mixins.mq-down(md) {
+      font-size: 2.4rem;
+    }
+  }
+}
+.sec-ttl04 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1.4;
+  &.-col {
+    align-items: center;
+    .sub {
+      flex-direction: column;
+      .en {
+        margin-top: 10px;
+      }
+    }
+    .ja {
+      margin-top: 10px;
+      @include mixins.mq-down(md) {
+        margin-top: 8px;
+      }
+    }
+    .dotted {
+      margin-left: 0;
+    }
+  }
+  .sub {
+    display: flex;
+    align-items: center;
+    .en {
+      font-size: 1.2rem;
+      font-family: variables.$font-Karla;
+      font-weight: 500;
+      text-transform: uppercase;
+      color: variables.$txt-color;
+      letter-spacing: 0.1em;
+    }
+    .dotted {
+      position: relative;
+      display: flex;
+      span {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        &:nth-child(odd) {
+          background: variables.$secondary-color;
+        }
+        &:nth-child(even) {
+          background: variables.$primary-color;
+        }
+        &:not(:last-child) {
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+  .ja {
+    margin-top: 6px;
+    font-size: 2.4rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    color: #fb856b;
+    @include mixins.mq-down(md) {
+      font-size: 2.2rem;
+    }
+  }
+}
+.sec-ttl05 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1.4;
+  &.-col {
+    align-items: center;
+    .sub {
+      flex-direction: column;
+      .en {
+        margin-top: 6px;
+      }
+    }
+    .ja {
+      margin-top: 10px;
+      @include mixins.mq-down(md) {
+        margin-top: 8px;
+      }
+    }
+    .dotted {
+      margin-left: 0;
+    }
+  }
+  .sub {
+    display: flex;
+    align-items: center;
+    .en {
+      font-size: 1.2rem;
+      font-family: variables.$font-Karla;
+      font-weight: 500;
+      text-transform: uppercase;
+      color: variables.$txt-color;
+      letter-spacing: 0.2em;
+    }
+    .dotted {
+      position: relative;
+      display: flex;
+      span {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        &:nth-child(odd) {
+          background: variables.$secondary-color;
+        }
+        &:nth-child(even) {
+          background: variables.$primary-color;
+        }
+        &:not(:last-child) {
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+  .ja {
+    margin-top: 6px;
+    font-size: 2.4rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    color: #fb856b;
+    @include mixins.mq-down(md) {
+      font-size: 2rem;
+    }
+  }
+}

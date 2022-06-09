@@ -1,0 +1,370 @@
+// Foundation
+@use '../foundation/variables';
+@use '../foundation/mixins';
+
+// ICON-BUTTON
+// ---------------
+// | [icon] text |
+// ---------------
+.icon-btn {
+  width: 100%;
+  height: 100%;
+  .link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 1.6rem;
+    font-weight: 700;
+    background: variables.$secondary-color;
+    padding: 10px 25px 10px 10px;
+    @include mixins.mq-down(sm) {
+      font-size: 1.4rem;
+    }
+    .icon {
+      order: -1;
+      width: 16px;
+      margin-right: 10px;
+      & > .img-box {
+        padding-top: 100%;
+        svg {
+          stroke: #fff;
+        }
+      }
+    }
+  }
+}
+
+// ARROW-BUTTON
+// ---------------
+// |   text    → |
+// ---------------
+.arrow-btn {
+  width: 100%;
+  height: 100%;
+  .link {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    color: variables.$txt-color;
+    font-size: 1.6rem;
+    font-weight: 700;
+    padding-bottom: 8px;
+    transition: color 400ms variables.$bezier-easeOutCubic;
+    &:before {
+      content: '';
+      width: 100%;
+      height: 2px;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      background: variables.$txt-color;
+    }
+    @include mixins.mq-up(md) {
+      &:hover {
+        color: variables.$secondary-color;
+        .circle {
+          background: variables.$secondary-color;
+          .icon .img-box svg {
+            transform: translateX(15px);
+          }
+        }
+      }
+    }
+    @include mixins.mq-down(sm) {
+      font-size: 1.5rem;
+    }
+    @include mixins.mq-down(sm) {
+      font-size: 1.4rem;
+    }
+    .circle {
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: variables.$secondary-light;
+      transition: background-color 400ms variables.$bezier-easeOutCubic;
+      .icon {
+        width: 14px;
+        & > .img-box {
+          padding-top: 100%;
+          svg {
+            transition: transform 400ms variables.$bezier-easeOutCubic;
+            stroke: variables.$txt-color;
+          }
+        }
+      }
+    }
+  }
+
+  &.-reverse {
+    .link {
+      flex-direction: row-reverse;
+    }
+    .circle {
+      transform: scale(-1,1);
+    }
+  }
+}
+
+// TEXT-ARROW-BUTTON
+//
+// text          →
+// ---------------
+.txt-arrow-btn {
+  width: 100%;
+  height: 100%;
+  .link {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    color: variables.$txt-color;
+    font-size: 1.6rem;
+    font-weight: 700;
+    padding: 10px 0;
+    transition: color 300ms variables.$bezier-easeOutCubic;
+    @include mixins.mq-up(md) {
+      &:hover {
+        color: variables.$primary-color;
+        .icon {
+          transform: translateX(50%);
+          & > .img-box {
+            svg {
+              stroke: variables.$primary-color;
+            }
+          }
+        }
+      }
+    }
+    @include mixins.mq-down(sm) {
+      font-size: 1.5rem;
+    }
+    @include mixins.mq-down(sm) {
+      font-size: 1.4rem;
+    }
+    &:before {
+      content: '';
+      position: absolute;
+      z-index: 1;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: variables.$primary-color;
+    }
+    .icon {
+      width: 16px;
+      transition: transform 300ms variables.$bezier-easeOutCubic;
+      & > .img-box {
+        padding-top: 100%;
+        svg {
+          stroke: variables.$txt-color;
+          transition: stroke 300ms variables.$bezier-easeOutCubic;
+        }
+      }
+    }
+  }
+}
+
+// CIRCLE-ICON-BUTTON
+//
+// text    (→)
+//
+.circle-icon-btn {
+  width: 100%;
+  height: 100%;
+  .link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: variables.$primary-color;
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    @include mixins.mq-down(sm) {
+      font-size: 1.5rem;
+    }
+    @include mixins.mq-down(sm) {
+      font-size: 1.4rem;
+    }
+    .circle {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 46px;
+      height: 46px;
+      margin-left: 10px;
+      flex-shrink: 0;
+      @include mixins.mq-down(md) {
+        width: 40px;
+        height: 40px;
+      }
+      &:before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        border-radius: 99px;
+        background: variables.$primary-color;
+        transition: background-color 400ms variables.$bezier-easeOutCubic;
+      }
+      &:after {
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: -5;
+        top: 0;
+        left: 0;
+        transform-origin: center;
+        transform: scale(0);
+        border-radius: 99px;
+        background: variables.$primary-color;
+        transition: transform 500ms variables.$bezier-easeOutBack;
+      }
+      &__icon {
+        position: relative;
+        z-index: 5;
+        width: 18px;
+        .img-box {
+          padding-top: 100%;
+          svg {
+            stroke: #fff;
+            transition: stroke 300ms variables.$bezier-easeOutCubic;
+          }
+        }
+      }
+    }
+  }
+  &.-white {
+    .link {
+      color: #fff;
+      @include mixins.mq-up(md) {
+        &:hover {
+          .circle {
+            &:before {
+              background-color: transparent;
+            }
+            &:after {
+              transform: scale(1.05);
+            }
+            &__icon {
+              & > .img-box {
+                svg {
+                  stroke: #fff;
+                }
+              }
+            }
+          }
+        }
+      }
+      .circle {
+        &:before {
+          background: #fff;
+        }
+        &__icon {
+          .img-box {
+            svg {
+              stroke: variables.$txt-color;
+            }
+          }
+        }
+      }
+    }
+  }
+  &.-large {
+    .link {
+      font-size: 2rem;
+      @include mixins.mq-down(md) {
+        font-size: 1.6rem;
+      }
+      @include mixins.mq-down(sm) {
+        font-size: 1.5rem;
+      }
+      .circle {
+        width: 56px;
+        height: 56px;
+        @include mixins.mq-down(md) {
+          width: 50px;
+          height: 50px;
+        }
+      }
+    }
+  }
+}
+
+// BACK-BUTTON
+// ---------------
+// | ←   text    |
+// ---------------
+.back-btn {
+  width: 100%;
+  height: 100%;
+  .link {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background: variables.$primary-color;
+    background-size: 600px 100%;
+    color: #fff;
+    font-weight: 700;
+    padding: 10px 10px 12px 20px;
+    border-radius: 5px;
+    @include mixins.mq-up(md) {
+      transition: background-color 300ms variables.$bezier-easeOutCubic;
+      &:hover {
+        color: #fff;
+        background-color: variables.$primary-dark;
+        .icon {
+          transform: translateX(-50%);
+        }
+      }
+    }
+    @include mixins.mq-down(sm) {
+      font-size: 1.5rem;
+    }
+    @include mixins.mq-down(sm) {
+      font-size: 1.4rem;
+    }
+    .icon {
+      position: absolute;
+      z-index: 5;
+      top: calc(50% - 8px);
+      left: 10px;
+      width: 16px;
+      margin-left: 10px;
+      transition: transform 300ms variables.$bezier-easeOutCubic;
+      & > .img-box {
+        padding-top: 100%;
+        svg {
+          stroke: #fff;
+        }
+      }
+    }
+  }
+}
